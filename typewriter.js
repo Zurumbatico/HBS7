@@ -57,19 +57,10 @@
     letter.classList.remove("typing");
   }
 
-  // clic: revelar toda la carta al instante
-  function revealAll() {
-    if (finished) return;
-    finished = true;
-    els.forEach((e, i) => {
-      e.classList.remove("pending");
-      e.textContent = texts[i];
-    });
-    caret.remove();
-    letter.classList.remove("typing");
-    letter.scrollTop = 0;
+  // Si hay portada de entrada, esperamos su señal; si no, arrancamos ya.
+  if (document.getElementById("intro")) {
+    window.addEventListener("start-letter", type, { once: true });
+  } else {
+    type();
   }
-  letter.addEventListener("click", revealAll);
-
-  type();
 })();
