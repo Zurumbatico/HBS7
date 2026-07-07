@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Feliz Cumpleaños</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@500;700&family=Caveat:wght@400;500;600;700&display=swap"
+    rel="stylesheet"
+  />
+  <link rel="stylesheet" href="./style.css" />
+</head>
+<body>
+  <main class="card">
+    <!-- ===== Panel izquierdo: portada ===== -->
+    <section class="cover">
+      <div class="stars"></div>
+
+      <h1 class="neon-title">Feliz<br />Cumpleaños</h1>
+
+      <!-- Aquí se pinta la imagen con el efecto p5 -->
+      <div id="canvas-holder" class="canvas-holder"></div>
+
+      <aside class="sticky-note">
+        Que este nuevo capítulo esté lleno de momentos bonitos y sueños que se
+        hacen realidad.
+      </aside>
+    </section>
+
+    <!-- ===== Panel derecho: carta ===== -->
+    <section class="letter">
+      <span class="tape"></span>
+      <h2>Ey, ahora sí… ¡feliz cumpleaños!</h2>
+
+      <p>
+        Quizás me pueda explayar un poco más acá que en las ínfimas dimensiones
+        de la tarjetica que tenía.
+      </p>
+      <p>
+        25 años… y apenas un mes de conocerte. Suena demasiado poco para querer
+        resumir toda una vida, pero siento que, de tanto en tanto, voy
+        aprendiendo de ti: tanto de la persona que eres ahora como de la que
+        conozco a través de tus recuerdos y anécdotas.
+      </p>
+      <p>
+        Dicen que por cada año de vida tienes un deseo. Espero que los 25 que
+        tienes ahora se puedan cumplir (claramente se sobreentiende que el
+        dinero es uno de esos, pon terrenos mejor o propiedades). Pero, sobre
+        todo, espero que disfrutes el camino hacia todo lo que quieres
+        conseguir.
+      </p>
+      <p>
+        Me di cuenta de algo hace un tiempo, que el número 7 ya no consigo verlo
+        como un número cualquiera. Cada vez que aparece me acuerdo del significado que tiene para ti. Es curioso
+        cómo, sin darnos cuenta, las personas terminan cambiando la forma en que
+        vemos hasta las cosas más simples.
+      </p>
+      <p>
+        Y te juor que siempre estaré más que dispuesto a invitarte a mi mundo;
+        uno donde, claramente, mi ángel guardián fue abatido por las
+        extorsiones. Así que, si el tuyo algún día decide no hacer bien su
+        trabajo, aquí siempre tendrás un lugar donde ser bienvenida.
+      </p>
+    </section>
+
+    <!-- ===== Reproductor (mock) ===== -->
+    <footer class="player">
+      <div class="track">
+        <img class="cover-art" src="./cover.jpeg" alt="The Astronaut" />
+        <div class="track-info">
+          <span class="track-title">The Astronaut <span class="fav">♥</span></span>
+          <span class="track-artist">Jin</span>
+        </div>
+      </div>
+
+      <div class="controls-wrap">
+        <div class="controls">
+          <button class="ctrl" title="Aleatorio">🔀</button>
+          <button class="ctrl" title="Anterior">⏮</button>
+          <button class="ctrl play" id="playBtn" title="Reproducir">▶</button>
+          <button class="ctrl" title="Siguiente">⏭</button>
+          <button class="ctrl" title="Repetir">🔁</button>
+        </div>
+        <div class="progress">
+          <span class="time" id="curTime">0:00</span>
+          <div class="bar" id="bar"><div class="fill" id="fill"></div></div>
+          <span class="time" id="totalTime">4:12</span>
+        </div>
+      </div>
+
+      <p class="footer-note">Que la vida te regale<br />siempre razones para sonreír.</p>
+    </footer>
+  </main>
+
+  <!-- audio real: coloca "song.mp3" en la raíz del proyecto -->
+  <audio id="audio" src="./song.mp3" preload="metadata"></audio>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.9.4/p5.min.js"></script>
+  <script src="./sketch.js"></script>
+  <script src="./player.js"></script>
+  <script src="./typewriter.js"></script>
+</body>
+</html>
